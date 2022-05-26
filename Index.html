@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        HTML | File upload example
+    </title>
+    <script type="text/javascript">
+    </script>
+</head>
+
+<body>
+    <h2>Hi Users Choose your file and Click upload.</h2>
+    <!-- Input Form Elements HTML 5 
+    <input id="fileupload" type="file" name="fileupload" />
+    <button id="upload-button" onclick="uploadFile()"> Upload file </button>
+    -->
+    
+
+    <!-- File Upload Logic JavaScript -->
+    <!--    
+            <script>
+        async function uploadFile() {
+            //creating form data object and append file into that form data
+            let formData = new FormData();
+            formData.append("file", fileupload.files[0]);
+            let cargaJSON = formData
+            console.log(formData)
+            //network request using POST method of fetch
+            await fetch('PASTE_YOUR_URL_HERE', {
+                method: "POST",
+                body: formData
+            });
+            alert('You have successfully upload the file!');
+        }
+    </script>
+    -->
+
+    <form id="upload">
+        <label for="file">File to upload</label>
+        <input type="file" id="file" accept=".json">
+    
+        <button>Upload</button>
+    </form>
+    <script src="/Automata2/cargaArchivos.js"></script>
+
+</body>
+<html>
