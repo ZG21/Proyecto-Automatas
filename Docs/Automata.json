@@ -1,0 +1,30 @@
+{
+    "name": "Test",
+    "state": [
+        "a",
+        "b",
+        "c"
+    ],
+    "language": [
+        1,
+        0
+    ],
+    "initial": "a",
+    "final": [
+        "c"
+    ],
+    "transition": [
+        {
+            "event": [
+                1
+            ],
+            "from": "a",
+            "to": "b"
+        },
+        {
+            "event": "[1,0]",
+            "from": "b",
+            "to": "c"
+        }
+    ]
+}
