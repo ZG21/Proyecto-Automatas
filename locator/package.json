@@ -1,0 +1,22 @@
+{
+  "name": "locator",
+  "version": "1.0.0",
+  "description": "Uso para librerias de graficacion automata",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZG21/Proyecto-Automatas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZG21/Proyecto-Automatas/issues"
+  },
+  "homepage": "https://github.com/ZG21/Proyecto-Automatas#readme",
+  "dependencies": {
+    "mermaid": "^9.1.1"
+  }
+}
