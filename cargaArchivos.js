@@ -6,8 +6,18 @@ let automata = {};
 // Listen for submit events
 form.addEventListener('submit', handleSubmit);
 
-function handleSubmit(event)
-{
+//button creation
+let state = document.createElement('div');
+state.setAttribute('class','mermaid');
+document.body.append(state);
+console.log(document.body.childNodes);
+$(document).ready(function(){
+	$('.mermaid').append('Star')
+	$('.mermaid').append('moon')
+	mermaid.initialize({ startOnLoad: true });
+});
+
+function handleSubmit(event){
 
 	// Stop the form from reloading the page
 	event.preventDefault();

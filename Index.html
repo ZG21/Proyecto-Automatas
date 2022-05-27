@@ -5,8 +5,9 @@
     <title>
         HTML | File upload example
     </title>
-    <script type="text/javascript">
-    </script>
+    <script type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -22,7 +23,24 @@
     <textarea id="txt_inp">
 
     </textarea>
-
+    
+<br>
+    <div class="mermaid">
+        graph TD
+        estado1 --> B[Load Balancer]
+        B --> C[Server1]
+        B --> D[Server2]
+    </div>
+    
+    And here is another:
+    <div class="mermaid" id="grafo1">
+        graph TD
+        A[Client] -->|tcp_123| B
+        B(Load Balancer)
+        B -->|tcp_456| C[Server1]
+        B -->|tcp_456| D[Server2]
+        c --> B
+    </div>
     <script src="cargaArchivos.js"></script>
 
 </body>
