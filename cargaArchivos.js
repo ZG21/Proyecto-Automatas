@@ -9,11 +9,20 @@ form.addEventListener('submit', handleSubmit);
 //button creation
 let state = document.createElement('div');
 state.setAttribute('class','mermaid');
-document.body.append(state);
+state.setAttribute('id','grafo2');
+state.textContent='graph TD;'
+state.append('Star --> b;')
+//state.textContent="Becerro --> casa;"
+document.body.append(state)
+//document.body.append(state);
+
+//var state = document.cloneNode('#grafo1');
+//console.log(state,"perris")
+
 console.log(document.body.childNodes);
 $(document).ready(function(){
-	$('.mermaid').append('Star')
-	$('.mermaid').append('moon')
+	//$('#grafo1').append('Graph LR')
+	$('.mermaid').append('moon;')
 	mermaid.initialize({ startOnLoad: true });
 });
 
