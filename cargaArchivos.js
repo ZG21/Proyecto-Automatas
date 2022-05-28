@@ -6,24 +6,26 @@ let automata = {};
 // Listen for submit events
 form.addEventListener('submit', handleSubmit);
 
-//button creation
+//Graph creation
 let state = document.createElement('div');
 state.setAttribute('class','mermaid');
-state.setAttribute('id','grafo2');
+state.setAttribute('id','graph');
 state.textContent='graph TD;'
-state.append('Star --> b;')
-//state.textContent="Becerro --> casa;"
-document.body.append(state)
-//document.body.append(state);
+state.append('perro -->gato;')
+state.append('perro -->gato;')
+state.append('perro1 -->gato1;')
+state.append('perro -->gato1;')
+console.log(state,"elbueno")
 
-//var state = document.cloneNode('#grafo1');
-//console.log(state,"perris")
+document.body.append(state)
+
+
+
+
 
 console.log(document.body.childNodes);
 $(document).ready(function(){
-	//$('#grafo1').append('Graph LR')
-	$('.mermaid').append('moon;')
-	mermaid.initialize({ startOnLoad: true });
+	//mermaid.initialize({ startOnLoad: true });
 });
 
 function handleSubmit(event){
@@ -48,6 +50,22 @@ function lecturaAutomata(event)
 {
 	automata = JSON.parse(event.target.result);
 	document.getElementById("txt_inp").innerHTML = JSON.stringify(automata);
+	if (automata) {
+		mermaid.initialize({ startOnLoad: true });
+		creacionAutomata(automata)
+	}
+}
+
+function creacionAutomata(automata){
+	
+	console.log("hello world", automata)
+
+	let state1 = document.getElementById("graph")
+	state1.append("a --> b;")
+	
+	console.log(state1,"perris")
+	document.body.append(state1)
+
 }
 
 setTimeout(() =>
