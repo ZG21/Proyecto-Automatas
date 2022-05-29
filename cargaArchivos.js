@@ -6,6 +6,7 @@ let automata = {};
 // Listen for submit events
 form.addEventListener('submit', handleSubmit);
 
+<<<<<<< HEAD
 //Graph creation
 let state = document.createElement('div');
 state.setAttribute('class','mermaid');
@@ -22,6 +23,8 @@ document.body.append(state)
 
 
 
+=======
+>>>>>>> ebff6526917444a4ca37523bdc75c28e85aaba99
 
 console.log(document.body.childNodes);
 $(document).ready(function(){
@@ -48,6 +51,19 @@ function handleSubmit(event){
  */
 function lecturaAutomata(event)
 {
+	//button creation
+	let state = document.createElement('div');
+	state.setAttribute('class','mermaid');
+	state.setAttribute('id','grafo2');
+	state.textContent='graph TD;'
+	state.append('Star --> b;')
+	//state.textContent="Becerro --> casa;"
+	document.body.append(state)
+	//document.body.append(state);
+
+	//var state = document.cloneNode('#grafo1');
+	//console.log(state,"perris")
+
 	automata = JSON.parse(event.target.result);
 	document.getElementById("txt_inp").innerHTML = JSON.stringify(automata);
 	if (automata) {
