@@ -6,29 +6,39 @@ let automata = {};
 // Listen for submit events
 form.addEventListener('submit', handleSubmit);
 
-<<<<<<< HEAD
 //Graph creation
 let state = document.createElement('div');
 state.setAttribute('class','mermaid');
-state.setAttribute('id','graph');
+state.setAttribute('id','graph1');
 state.textContent='graph TD;'
-state.append('perro -->gato;')
-state.append('perro -->gato;')
-state.append('perro1 -->gato1;')
-state.append('perro -->gato1;')
-console.log(state,"elbueno")
+
+//AObject
+var myCar = {
+    make: 'Ford',
+    model: 'Mustang',
+    year: 1969
+};
+
+function hola(){
+	state.append(myCar.make,';')
+	state.append(myCar.model)
+	for (let i = 0; i < 7; i++) {
+		
+	}
+}
+hola()
+
+
 
 document.body.append(state)
 
 
 
 
-=======
->>>>>>> ebff6526917444a4ca37523bdc75c28e85aaba99
 
 console.log(document.body.childNodes);
 $(document).ready(function(){
-	//mermaid.initialize({ startOnLoad: true });
+	mermaid.initialize({ startOnLoad: true });
 });
 
 function handleSubmit(event){
@@ -45,30 +55,13 @@ function handleSubmit(event){
 	reader.readAsText(file.files[0]);
 }
 
-/**
- * 
- * @param {*} event 
- */
-function lecturaAutomata(event)
-{
-	//button creation
-	let state = document.createElement('div');
-	state.setAttribute('class','mermaid');
-	state.setAttribute('id','grafo2');
-	state.textContent='graph TD;'
-	state.append('Star --> b;')
-	//state.textContent="Becerro --> casa;"
-	document.body.append(state)
-	//document.body.append(state);
 
-	//var state = document.cloneNode('#grafo1');
-	//console.log(state,"perris")
-
+function lecturaAutomata(event){
 	automata = JSON.parse(event.target.result);
 	document.getElementById("txt_inp").innerHTML = JSON.stringify(automata);
 	if (automata) {
-		mermaid.initialize({ startOnLoad: true });
 		creacionAutomata(automata)
+		reversoAutomata(automata)
 	}
 }
 
@@ -76,15 +69,32 @@ function creacionAutomata(automata){
 	
 	console.log("hello world", automata)
 
-	let state1 = document.getElementById("graph")
-	state1.append("a --> b;")
+	let state1 = document.getElementById("graph1")
+	state.append("a --> b;")
 	
 	console.log(state1,"perris")
 	document.body.append(state1)
 
 }
 
-setTimeout(() =>
-{
-	console.log(automata);
-}, 10000);
+function reversoAutomata(automata){
+	let revAut = automata
+	let nuevoInicial = revAut.initial
+	revAut.initial=revAut.final
+	revAut.final=nuevoInicial
+	if(revAut.final.length == 1){
+		 for (let i = 0; i < revAut.transition.length; i++) {
+			 let transicion = revAut.transition[i]
+			 let nuevoFrom = transicion.from
+			 transicion.from = transicion.to
+			 transicion.to = nuevoFrom
+			 nuevoFrom = ""
+			 console.log(typeof(transicion), transicion, "DESPUES")
+			 
+		 }
+	}
+	
+	
+	
+
+}
