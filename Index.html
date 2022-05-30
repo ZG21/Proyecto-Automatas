@@ -3,7 +3,7 @@
 
 <head>
     <title>
-        HTML | File upload example
+        Proyecto Automatas
     </title>
     <script type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
@@ -16,17 +16,19 @@
     <form id="upload">
         <label for="file">File to upload</label>
         <input type="file" id="file" accept=".json">
-
-        <button>Upload</button>
+        <input type="button" id="inp_uploadFile" value="Subir Archivo">
     </form>
 
     <textarea id="txt_inp">
 
     </textarea>
-    
-<br>
-    
-    <script src="cargaArchivos.js"></script>
+
+    <div id="graph1" class="mermaid"></div>
 
 </body>
+<footer>
+
+    <script src="cargaArchivos.js"></script>
+
+</footer>
 <html>
